@@ -9,13 +9,14 @@
 <title>Feedback</title>
 </head>
 <body>
-	<h1 style="color:blue"><marquee behavior="alternate"> Feedback</marquee></h1>
+<div align="center">
+	<h1> Feedback</h1>
+</div>
 <ul>
 	<c:forEach items="${feedbacklist}" var="feedback">
 		<li>${feedback.message}</li>
 	</c:forEach>
-	<a href="/feedback">Search Users</a>
-
+	<a href="/feedback">Enter feedback</a>
 </ul>
 </body>
 </html>

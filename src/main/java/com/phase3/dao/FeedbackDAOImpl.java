@@ -15,20 +15,33 @@ public class FeedbackDAOImpl implements FeedbackDAO{
 
 	@Override
 	public boolean addFeedback(Feedback fb) {
-		repo.save(fb);
-		return true;
+		try {
+			repo.save(fb);
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 
 	@Override
 	public boolean getFeedback(long fId) {
-		repo.findById(fId);
-		return true;
+		try {
+			repo.findById(fId);
+			return true;
+		}
+		catch(Exception e) {
+		return false;
+		}
 	}
 
 	@Override
 	public List<Feedback> getAllFeedback() {
-		List<Feedback> allFeedback = (List<Feedback>)repo.findAll();
-		return allFeedback;
+		try {
+			List<Feedback> allFeedback = (List<Feedback>)repo.findAll();
+			return allFeedback;
+		}catch(Exception e) {
+			return null;
+		}
 	}
 
 	

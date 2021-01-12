@@ -16,19 +16,26 @@ public class FeedbackServiceImpl implements FeedbackService{
 
 	@Override
 	public boolean addFeedback(Feedback fb) {
-		dao.addFeedback(fb);
-		return true;
+		if(dao.addFeedback(fb)) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override
 	public boolean getFeedback(long fId) {
-		dao.getFeedback(fId);
-		return true;
+		if(dao.getFeedback(fId)) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override
 	public List<Feedback> getAllFeedback() {
-		return dao.getAllFeedback();
+		if(dao.getAllFeedback() != null) {
+			return dao.getAllFeedback();
+		}
+		return null;
 	}
 
 	
